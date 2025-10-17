@@ -71,4 +71,22 @@ router.get("/:id", async (req, res) => {
   res.status(200).json(result);
 });
 
+// update put
+
+router.put("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const result = await User.findByIdAndUpdate(
+    id,
+    {
+      name: "Ali",
+      email: "ali@mail.com",
+      age: 10,
+    },
+    { new: true }
+  );
+
+  res.status(200).json(result);
+});
+
 export const UserRoutes = router;
