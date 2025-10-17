@@ -89,4 +89,20 @@ router.put("/:id", async (req, res) => {
   res.status(200).json(result);
 });
 
+//  delete all
+
+router.delete("/all", async (req, res) => {
+  // const deleteMany = await User.deleteMany();
+  const deleteOne = await User.deleteOne({ name: "Siam Hossain" });
+  // const deleteManyCondition = await User.deleteMany({ age: { $lt: 18 } });
+  res.status(200).json({ message: "User deleted successfully" });
+});
+
+//  delete by id
+router.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  const result = await User.findByIdAndDelete(id);
+  res.status(200).json({ message: "User deleted successfully" });
+});
+
 export const UserRoutes = router;
