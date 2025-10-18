@@ -15,12 +15,18 @@ router.post("/create", async (req, res) => {
 // get all user
 router.get("/all", async (req, res) => {
   const result = await User.find();
-  // const resultGte = await User.find({ age: { $gt: 18 } });
-  // const resultLte = await User.find({ age: { $lte: 18 } });
-  // const resultBetween = await User.find({ age: { $gt: 18, $lt: 20 } });
 
-  // sort
-  // const resultSort = await User.find().sort({ age: 1 });
+  // greater then equal
+
+  const resultGte = await User.find({ age: { $gt: 18 } });
+
+  // less then equal
+  const resultLte = await User.find({ age: { $lte: 18 } });
+  // between greater then equal & less then equal
+  const resultBetween = await User.find({ age: { $gt: 18, $lt: 20 } });
+
+  // sort by asc
+  // const resultSortAsc = await User.find().sort({ age: 1 });
 
   // skip & limit
   // const resultSkip = await User.find().skip(5).limit(2);
