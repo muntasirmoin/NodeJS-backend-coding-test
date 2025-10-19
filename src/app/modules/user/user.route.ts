@@ -18,22 +18,22 @@ router.get("/all", async (req, res) => {
 
   // greater then equal
 
-  const resultGte = await User.find({ age: { $gt: 18 } });
+  // const resultGte = await User.find({ age: { $gt: 18 } });
 
   // less then equal
-  const resultLte = await User.find({ age: { $lte: 18 } });
+  // const resultLte = await User.find({ age: { $lte: 18 } });
 
   // between greater then equal & less then equal
-  const resultBetween = await User.find({ age: { $gt: 18, $lt: 20 } });
+  // const resultBetween = await User.find({ age: { $gt: 18, $lt: 20 } });
 
   // sort by asc
-  const resultSortAsc = await User.find().sort({ age: 1 });
+  // const resultSortAsc = await User.find().sort({ age: 1 });
 
   // sort by desc
-  const resultSortDesc = await User.find().sort({ age: -1 });
+  // const resultSortDesc = await User.find().sort({ age: -1 });
 
   // skip 1st five  & limit 2  mean give the 2 value
-  const resultSkip = await User.find().skip(5).limit(2);
+  // const resultSkip = await User.find().skip(5).limit(2);
 
   // projection select field
   // Include only name and age
