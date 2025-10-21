@@ -44,11 +44,11 @@ router.get("/all", async (req, res) => {
 
   // map
   const users = await User.find();
-  // const result = users.map((user) => ({
-  //   name: user.name.toUpperCase(),
-  //   email: user.email,
-  //   age: user.age,
-  // }));
+  const resultMap = users.map((user) => ({
+    name: user.name.toUpperCase(),
+    email: user.email,
+    age: user.age,
+  }));
 
   // filter
   // const result = users.filter((user) => user.age < 18);
